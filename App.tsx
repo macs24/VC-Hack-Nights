@@ -261,49 +261,6 @@ const App: React.FC = () => {
                 health={petHealth}
                 message={currentMessage}
               />
-              {purchasedItemIds.has(1) && (
-                <div className="bg-surface/50 p-4 rounded-2xl shadow-lg border border-subtle">
-                    <h3 className="text-center font-bold text-text-main font-heading text-xl mb-2">Customize Vassar Hat</h3>
-                    <div className="grid grid-cols-[auto,1fr] items-center gap-x-4 gap-y-2 max-w-sm mx-auto">
-                        <label htmlFor="hat-scale" className="text-sm text-text-subtle w-12 text-right">Size</label>
-                        <input 
-                            id="hat-scale"
-                            type="range"
-                            min="0.5"
-                            max="2.5"
-                            step="0.05"
-                            value={hatScale}
-                            onChange={(e) => setHatScale(parseFloat(e.target.value))}
-                            className="w-full accent-primary"
-                            aria-label="Vassar Hat Size"
-                        />
-                        <label htmlFor="hat-x" className="text-sm text-text-subtle w-12 text-right">X-Pos</label>
-                        <input 
-                            id="hat-x"
-                            type="range"
-                            min="-50"
-                            max="50"
-                            step="1"
-                            value={hatX}
-                            onChange={(e) => setHatX(parseInt(e.target.value, 10))}
-                            className="w-full accent-primary"
-                            aria-label="Vassar Hat X Position"
-                        />
-                        <label htmlFor="hat-y" className="text-sm text-text-subtle w-12 text-right">Y-Pos</label>
-                        <input 
-                            id="hat-y"
-                            type="range"
-                            min="-50"
-                            max="50"
-                            step="1"
-                            value={hatY}
-                            onChange={(e) => setHatY(parseInt(e.target.value, 10))}
-                            className="w-full accent-primary"
-                            aria-label="Vassar Hat Y Position"
-                        />
-                    </div>
-                </div>
-              )}
               <ExperienceBar experience={experience} />
             </div>
             <div className="lg:col-span-1">
