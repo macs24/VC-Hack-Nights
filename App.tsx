@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import { TaskList, GoalsList } from './components/AssignmentList';
@@ -133,9 +134,6 @@ const App: React.FC = () => {
   const [purchasedItems, setPurchasedItems] = useState<ShopItem[]>([]);
   // FIX: Changed 'main' to 'home' to create a consistent 'View' type across components.
   const [activeView, setActiveView] = useState<View>('home');
-  const [hatScale, setHatScale] = useState(1.2);
-  const [hatX, setHatX] = useState(0);
-  const [hatY, setHatY] = useState(0);
   const [petHealth, setPetHealth] = useState(100);
   const [currentMessage, setCurrentMessage] = useState("Let's get started on our tasks!");
 
@@ -254,10 +252,7 @@ const App: React.FC = () => {
             <div className="lg:col-span-2 flex flex-col space-y-4">
               <Tamagotchi 
                 experience={experience} 
-                purchasedItems={purchasedItems} 
-                hatScale={hatScale} 
-                hatX={hatX} 
-                hatY={hatY}
+                purchasedItems={purchasedItems}
                 health={petHealth}
                 message={currentMessage}
               />

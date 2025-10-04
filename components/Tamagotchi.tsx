@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { TamagotchiStage, ShopItem, ItemCategory } from '../types';
 import { TAMAGOTCHI_STAGES } from '../constants';
@@ -35,9 +36,10 @@ const Tamagotchi: React.FC<TamagotchiProps> = ({ experience, purchasedItems, hea
      'bottom-10 left-0',
      'bottom-10 right-0'
  ];
-  const decorations = purchasedItems.filter(i => i.category === ItemCategory.Decoration);
+ const decorations = purchasedItems.filter(i => i.category === ItemCategory.Decoration);
+ const backgroundItem = decorations.find(i => i.id === 2);
  const vassarHat = decorations.find(i => i.id === 1);
- const otherDecorations = decorations.filter(i => i.id !== 1);
+ const otherDecorations = decorations.filter(i => i.id !== 1 && i.id !== 2);
 
 
  const healthColor = health > 60 ? 'bg-success' : health > 30 ? 'bg-warning' : 'bg-danger';
@@ -56,6 +58,11 @@ const Tamagotchi: React.FC<TamagotchiProps> = ({ experience, purchasedItems, hea
    <div className="bg-surface/50 p-6 rounded-2xl shadow-lg backdrop-blur-sm border border-subtle flex flex-col items-center">
     
       <div className="w-48 h-48 md:w-64 md:h-64 mb-4 group cursor-pointer relative mt-12">
+        {backgroundItem && (
+            <div className="absolute inset-0 flex items-center justify-center -z-10">
+                <img src={backgroundItem.asset} alt={backgroundItem.name} className="w-full h-full object-cover rounded-2xl transform scale-125" />
+            </div>
+        )}
        {/* Health Bar - Moved here and positioned absolutely */}
        <div className="absolute -top-12 w-full">
            <p className="text-sm font-semibold text-text-subtle mb-1 text-center font-heading">Health</p>
@@ -118,5 +125,3 @@ const Tamagotchi: React.FC<TamagotchiProps> = ({ experience, purchasedItems, hea
 
 
 export default Tamagotchi;
-
-
