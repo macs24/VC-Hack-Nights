@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Pet \1F95A </title>
+    <!-- To change the font, find a font on fonts.google.com and replace this link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // --- THEME CONFIGURATION ---
+      // All colors and fonts can be customized here.
+      tailwind.config = {
+        theme: {
+          extend: {
+            // To change the font, update the name here to match the one you imported above.
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['"Fredoka One"', 'cursive'],
+            },
+            // You can change the entire color scheme of the app by modifying these values.
+            colors: {
+              'primary': '#84a59d',   // Productivity Pet color
+              'secondary': '#e07a5f',
+              'accent': '#f28482',    // XP Bar color
+              
+              'background': '#f7ede2', // Main background
+              'surface': '#f5cac3',    // Daily goals and task card color
+              'subtle': '#e4b9b0',     
+              'muted': '#9ca3af',      
+
+              'text-main': '#3d405b',      // Dark text for light background
+              'text-subtle': '#6b7280',   // Lighter dark text
+
+              'success': '#60d394', // Softer green
+              'warning': '#f4a261', // Softer orange
+              'danger': '#e76f51',  // Softer red
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-background text-text-main font-sans text-lg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

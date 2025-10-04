@@ -1,0 +1,5 @@
+{
+  "name": "Productivity Pet",
+  "description": "A Tamagotchi-style virtual pet that grows and evolves as you complete your assignments. Visualize your productivity with dynamic progress bars and watch your digital companion thrive based on your task completion.",
+  "requestFramePermissions": []
+}
